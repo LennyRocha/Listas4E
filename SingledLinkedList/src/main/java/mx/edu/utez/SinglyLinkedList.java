@@ -14,18 +14,18 @@ public class SinglyLinkedList {
         }else{
             Nodo temp = cabeza; //Seleccionar el primer nodo
             //Recorrer los nodos
-            while (temp.siguiente != null) {
-                temp = temp.siguiente;
+            while (temp.getSiguiente() != null) {
+                temp.setSiguiente(temp);
             }
-            temp.siguiente = nuevo; //Creación de un nuevo nodo
+            temp.setSiguiente(nuevo); //Creación de un nuevo nodo
         }
     }
 
     public void mostrar(){
         Nodo temp = cabeza;
         while (temp != null) {
-            System.out.print(temp.dato+" -> ");
-            temp = temp.siguiente;
+            System.out.print(temp.getDato()+" -> ");
+            temp = temp.getSiguiente();
         }
         System.out.print("null");
         System.out.println();
@@ -38,11 +38,11 @@ public class SinglyLinkedList {
         }else{
             Nodo temp = cabeza;
             while (temp != null) {
-                if(temp.dato.equals(Nemo)){
+                if(temp.getDato().equals(Nemo)){
                     System.out.print("Aquí está Nemo, ");
                     return true;
                 }else{
-                    temp = temp.siguiente;
+                    temp = temp.getSiguiente();
                 }
             }
             System.out.print("No se encontró a Nemo, ");
